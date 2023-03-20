@@ -1,0 +1,157 @@
+<div id="infinite-scroller" appInfiniteScroller scrollPerecnt="30" immediateCallback="true" [scrollCallback]="scrollCallback">
+ 
+  <!--ul>
+    <li *ngFor="let item of news">{{item.title}}</li>
+  </ul -->
+
+
+
+
+
+<section *ngIf="isLoading && !errorMessage">
+    Loading our hyperdrives!!! Retrieving data...
+     <div class="pokeball">
+    <div class="upper">
+      <div class="inner"></div>
+    </div>
+    <div class="middle"></div>
+    <div class="lower">
+      <div class="inner"></div>
+    </div>
+  </div>
+    </section>
+    
+  <div class="container">
+    <section class="aaa">
+   
+
+
+    <div class="cover profile">
+              <div class="wrapper">
+                <div class="image">
+                  <img src="../assets/images/profile-coverO.jpg" alt="people" />
+                </div>
+                
+              </div>
+              <div class="cover-info">
+                <div class="avatar">
+                  <img src="../assets/images/place1.jpg" alt="people" />
+                </div>
+                <div class="name"><a href="#">ODEO Traks</a></div>
+                <ul class="cover-nav">
+
+                  <li><a href="user-public-timeline.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a></li>
+                  <li><a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a></li>
+                  <li><a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a></li>
+
+                </ul>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+<!-- button type="button" (click)="modal1.show()">test</button -->
+  <app-modal #modal1>
+    <div class="app-modal-header">
+      header
+    </div>
+    <div class="app-modal-body">
+      Whatever content you like, form fields, anything
+      <input type="text">
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="modal1.hide()">Close</button>
+      <button type="button" class="btn btn-default" (click)="modal2.show()">Show modal 2</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </app-modal>
+  
+  <app-modal #modal2>
+    <div class="app-modal-header">
+      header
+    </div>
+    <div class="app-modal-body">
+      Modal 2
+    </div>
+    <div class="app-modal-footer">
+       <button type="button" class="btn btn-default" (click)="modal2.hide()">Close</button>
+      <button type="button" class="btn btn-default" (click)="modal3.show()">Show modal 3</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </app-modal>
+  
+  <app-modal #modal3>
+    <div class="app-modal-header">
+      header
+    </div>
+    <div class="app-modal-body">
+      Modal 3
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="modal3.hide()">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </app-modal>
+
+    
+        <div class="row">
+        <div class="col-md-1"></div>
+                    <div class="col-md-10 panel">
+                      <h3 class="font-thin">New Tracks</h3>
+                      <div class="row row-sm">
+                        
+                        <div *ngFor="let person of news">
+                        <div class="col-xs-6 col-sm-2">
+                          <div class="item">
+                            <div class="pos-rlt">
+                              <div class="item-overlay opacity r r-2x bg-black">
+                                <div class="center text-center m-t-n">
+                                  <a class="player-add-song" id="{{person.track_id}}"><i class="fa fa-play-circle i-2x"></i></a>
+                                </div>
+                              </div>
+                              <a href="#" [routerLink]="['/tracks', person.track_id]"><img src="{{person.thumb}}" alt="" class="r r-2x img-full"></a>
+
+                                  <div class="odo-song-panel r-b">
+                                  <ul>
+                                      <li><a href="javascript:void(0);" class="add-song-to-queue" attr.aitist="{{person.artist_name}}" attr.link="{{person.url}}" attr.songname="{{person.title}}" attr.song-id="{{person.track_id}}" attr.poster="{{person.thumb}}" title="play"><span class="fa fa-play fa-fw text-center"></span></a>
+                                      </li>
+                                      <li><a href="javascript:void(0);" class="addToFavorite" song-id="5005" title="like"><span class="fa fa-heart-o text-center"></span></a>
+                                      </li>
+                                      <li><a href="javascript:void(0);" class="playlist-add-bubble" aitist="Eranda Madusinghe" link="http://fmderana.lk/content/video/fmsongs/Aadareta_Sima_Eranda_Madusinghe.mp3" songname="Aadareta Sima" song-id="5005" poster="http://fmderana.lk/image/data/1484800621Aadareta_Sima_Eranda_Madusinghe1.jpg" title="add to playlist"><span class="fa fa-plus fa-fw text-center"></span></a>
+                                      </li>
+                                      <li><a href="javascript:void(0);" (click)="modal1.show(person.track_id)" class="shre-this-audio" aitist="Eranda Madusinghe" link="/audio/5005/aadareta-sima-eranda-madusinghe" songname="Aadareta Sima" song-id="5005" title="share">
+                                      <span class="fa fa-share-alt fa-fw text-center"></span></a>
+                                      </li>
+                                  </ul>
+                                  </div>
+
+
+
+                            </div>
+                            <div class="padder-v">
+                              <a href="#" [routerLink]="['/tracks', person.track_id]" class="text-ellipsis">{{person.title}}</a>
+                              <a href="#" [routerLink]="['/tracks', person.track_id]" class="text-ellipsis text-xs text-muted">{{person.artist_name}}</a>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+        <div class="col-md-1"></div>
+      <section *ngIf="errorMessage">
+        {{errorMessage}}
+      </section>
+  </section>
+  </div>
+
+  <loading-indicator *ngIf="isLoading && !errorMessage"></loading-indicator>
+  </div>

@@ -1,0 +1,243 @@
+<div class="container">
+<section *ngIf="person">
+
+<div class="cover profile">
+              <div class="wrapper">
+                <div class="image">
+                  <img src="../assets/images/profile-cover.jpg" alt="people" />
+                </div>
+                
+              </div>
+              <div class="cover-info">
+                <div class="avatar">
+                  <img src="{{person.thumb}}" alt="people" />
+                </div>
+                <div class="name"><a href="#">{{person?.title}}</a></div>
+                <ul class="cover-nav">
+
+                  <li><a href="user-public-timeline.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a></li>
+                  <li><a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a></li>
+                  <li><a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a></li>
+
+                </ul>
+              </div>
+            </div>
+
+
+<div class="row">
+
+
+
+  <div class="col-md-6">
+
+           <div class="panel wrapper-md">
+                    <div class="row">
+                   
+
+                     
+                      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+                        <h2 class="m-t-none text-black">{{person?.title}}</h2>
+                        <div class="clearfix m-b">
+                          <a href="#" class="thumb-lg pull-left m-r">
+                            <img src="{{person.thumb}}" class="img-square">
+                          </a>
+                          <div class="clear">
+                            <a href="#" class="text-info">{{person?.artist_name}}</a>
+                            <small class="block text-muted">{{person?.like_count}} Likes / {{person?.like_count}} Plays</small>
+                          </div>
+                          <div class="m-t-xl text-right">
+                          <a href="#" class="btn btn-info">Play</a> <!-- a href="#" class="btn btn-default">3 Comments</a -->
+                          </div>
+                        </div>
+                        
+
+                      </div>
+
+                     
+
+                    </div>
+                    
+            </div>
+
+
+
+                   <button class="btn btn-info" (click)="gotoPeoplesList()">Back to Track list</button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="col-md-12">
+
+           <div class="panel wrapper-lg">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-12 col-lg-3 item">
+                        <img src="{{person.thumb}}" class="img-full-profile m-b">
+                      </div>
+                      <div class="col-sm-6">
+                        <h2 class="m-t-none text-black">{{person?.title}}</h2>
+                        <div class="clearfix m-b-lg">
+                        
+                          <div class="clear">
+                            <a href="#" class="text-info">{{person?.artist_name}}</a>
+                            <small class="block text-muted">{{person?.like_count}} Likes / {{person?.like_count}} Plays</small>
+                          </div>
+                        </div>
+                        <div class="m-b-lg">
+                          <a href="#" class="btn btn-info">Play</a>
+                        </div>
+
+                      </div>
+                    </div>
+                    
+                  </div>
+
+
+
+                  <div class="panel wrapper-lg">
+                    <div class="row">
+                    
+                     <div class="panel panel-default">
+                  <div class="panel-heading panel-heading-gray">
+                    <i class="fa fa-fw fa-info-circle"></i> About
+                  </div>
+                  <div class="panel-body">
+                    <ul class="list-unstyled profile-about margin-none">
+                      <li class="padding-v-5">
+                        <div class="row">
+                          <div class="col-sm-4"><span class="text-muted">Artist</span></div>
+                          <div class="col-sm-8">12 January 1990</div>
+                        </div>
+                      </li>
+                      <li class="padding-v-5">
+                        <div class="row">
+                          <div class="col-sm-4"><span class="text-muted">Featuring</span></div>
+                          <div class="col-sm-8">Specialist</div>
+                        </div>
+                      </li>
+                      <li class="padding-v-5">
+                        <div class="row">
+                          <div class="col-sm-4"><span class="text-muted">Genre</span></div>
+                          <div class="col-sm-8">Male</div>
+                        </div>
+                      </li>
+                      <li class="padding-v-5">
+                        <div class="row">
+                          <div class="col-sm-4"><span class="text-muted">Lyricist</span></div>
+                          <div class="col-sm-8">Miami, FL, USA</div>
+                        </div>
+                      </li>
+                      <li class="padding-v-5">
+                        <div class="row">
+                          <div class="col-sm-4"><span class="text-muted">Music By</span></div>
+                          <div class="col-sm-8">249</div>
+                        </div>
+                      </li>
+                      <li class="padding-v-5">
+                        <div class="row">
+                          <div class="col-sm-4"><span class="text-muted">Released in</span></div>
+                          <div class="col-sm-8">249</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                  </div></div>
+
+
+                   <button (click)="gotoPeoplesList()">Back to Track list</button>
+
+</div >
+
+
+
+
+               <!--div class="col-md-6">
+
+               <section>
+    <h2>You selected: {{person?.title}}</h2>
+    <img src="{{person.thumb}}" width="150" height="150">
+
+    <h3>Detail of {{person?.title}}</h3>
+    <h4>By -- {{person?.artist_name}}</h4>
+    <p>
+      Likes : {{person?.like_count}} Plays : {{person?.play_count}} and id {{person?.track_id}}.
+    </p>
+  </section>
+</div -->
+
+      
+    </div>
+
+
+    <!--div class="row">
+      
+      <div class="item col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default widget-user-1 text-center">
+                  <div class="avatar">
+                    <img src="{{person.thumb}}" alt="" class="img-full-profile">
+                    <h3>{{person?.title}}</h3>
+                    <a href="#" class="btn btn-success">Play <i class="fa fa-check-circle fa-fw"></i></a>
+                  </div>
+                  <div class="profile-icons margin-none">
+                    <span><i class="fa fa-users"></i> 372</span>
+                    <span><i class="fa fa-photo"></i> 43</span>
+                    <span><i class="fa fa-video-camera"></i> 3</span>
+                  </div>
+                  <div class="panel-body">
+                    <div class="expandable expandable-indicator-white expandable-trigger">
+                      <div class="expandable-content">
+                        <p>Hi! I'm Adrian the Senior UI Designer at
+                          <strong>MOSAICPRO</strong>. We hope you enjoy the design and quality of Social.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem delectus dolorum necessitatibus neque odio quam quas qui quod soluta? Aliquid eius esse minima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+    <div class="item col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default widget-user-1 text-center">
+                  
+                  <div class="panel-body">
+                    <div class="expandable expandable-indicator-white expandable-trigger">
+                      <div class="expandable-content">
+                        <p>Hi! I'm Adrian the Senior UI Designer at
+                          <strong>MOSAICPRO</strong>. We hope you enjoy the design and quality of Social.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem delectus dolorum necessitatibus neque odio quam quas qui quod soluta? Aliquid eius esse minima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    </div -->
+
+
+ 
+</section>
+
+
+</div>

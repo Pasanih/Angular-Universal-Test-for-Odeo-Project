@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h2 class="text-center">Home</h2>
+</div>
+<div class="container">
+  
+ <section class="aaa">
+    <section *ngIf="isLoading && !errorMessage">
+    Loading our hyperdrives!!! Retrieving data...
+    </section>
+      <ul>
+        <!-- this is the new syntax for ng-repeat -->
+        <li *ngFor="let person of people">
+            <a href="#" [routerLink]="['/tracks', person.track_id]">
+
+          <img src="{{person.thumb}}" width="150" height="150" >  
+          {{person.title}}  - By {{person.artist_name}}
+          </a>
+        </li>
+      </ul>
+      <section *ngIf="errorMessage">
+        {{errorMessage}}
+      </section>
+  </section>
+
+
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">Panel heading without title</div>
+    <div class="panel-body">
+      Panel content
+    </div>
+  </div>
+</div>

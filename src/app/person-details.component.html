@@ -1,0 +1,178 @@
+<div class="container">
+<section *ngIf="person">
+
+<div class="cover profile">
+              <div class="wrapper">
+                <div class="image">
+                  <img src="../assets/images/profile-cover.jpg" alt="people" />
+                </div>
+                
+              </div>
+              <div class="cover-info">
+                <div class="avatar">
+                  <img src="{{person.thumb}}" alt="people" />
+                </div>
+                <div class="name"><a href="#">{{person?.title}}</a></div>
+                <ul class="cover-nav">
+
+                  <li><a href="user-public-timeline.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a></li>
+                  <li><a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a></li>
+                  <li><a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a></li>
+
+                </ul>
+              </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6">
+           <div class="panel wrapper">
+                                             
+                      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+                        
+                        <div class="clearfix m-b">
+                          <a href="#" class="thumb-lg pull-left m-r">
+                            <img src="{{person.thumb}}" class="img-square">
+                          </a>
+                          <h2 class="m-t-none text-black">{{person?.title}}</h2>
+                          <div class="clear">
+                            <a href="#" class="text-info">{{person?.artist_name}}</a>
+                            <small class="block text-muted">{{person?.like_count}} Likes / {{person?.like_count}} Plays</small>
+                          </div>
+                          <div class="text-right" style="margin-top: 85px;">
+                          <a class="btn btn-info player-add-song" id="{{person.track_id}}"> Play</a>
+                          <!-- a href="#" class="btn btn-default">3 Comments</a -->
+                          </div>
+                        </div>
+                        
+                      </div>
+                   
+                 <button class="btn btn-info" (click)="gotoPeoplesList()">Back to Track list</button>
+                    
+            </div>
+            
+  </div>
+
+
+
+ <div class="item col-md-6 col-sm-12 col-xs-12">
+                <div class="panel panel-default widget-user-1 text-center">
+                  
+                  <div class="panel-body">
+                    <div class="expandable expandable-indicator-white expandable-trigger">
+                      <div >
+                        <p>Here all details of
+                          <strong>Track </strong>will appear.</p>
+                        <p> <strong>{{person?.title}} </strong></p>
+                        <p> <strong>{{person?.artist_name}} </strong></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem delectus dolorum necessitatibus neque odio quam quas qui quod soluta? Aliquid eius esse minima.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem delectus dolorum necessitatibus neque odio quam quas qui quod soluta? Aliquid eius esse minima.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+</div>
+
+</div>
+
+
+
+
+         <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 panel">
+                      <h3 class="font-thin">Recommended Tracks</h3>
+                      <div class="row row-sm">
+                        
+                        <div *ngFor=" let rectrackdetails of person2;  let i=index ">
+                          <div *ngIf="i<6">
+                        <div class="col-xs-6 col-sm-2">
+                          <div class="item">
+                            <div class="pos-rlt">
+                              <div class="item-overlay opacity r r-2x bg-black">
+                                <div class="center text-center m-t-n">
+                                  <a class="player-add-song" id="{{rectrackdetails.track_id}}"><i class="fa fa-play-circle i-2x"></i></a>
+                                </div>
+                              </div>
+                              <a href="#" [routerLink]="['/tracks', rectrackdetails.track_id]"><img src="{{rectrackdetails.thumb}}" alt="" class="r r-2x img-full"></a>
+
+                                  <div class="odo-song-panel r-b">
+                                  <ul>
+                                      <li><a href="javascript:void(0);" class="add-song-to-queue" attr.aitist="{{rectrackdetails.artist_name}}" attr.link="{{rectrackdetails.url}}" attr.songname="{{rectrackdetails.title}}" attr.song-id="{{rectrackdetails.track_id}}" attr.poster="{{rectrackdetails.thumb}}" title="play"><span class="fa fa-play fa-fw text-center"></span></a>
+                                      </li>
+                                      <li><a href="javascript:void(0);" class="addToFavorite" song-id="5005" title="like"><span class="fa fa-heart-o text-center"></span></a>
+                                      </li>
+                                      <li><a href="javascript:void(0);" class="playlist-add-bubble" aitist="Eranda Madusinghe" link="http://fmderana.lk/content/video/fmsongs/Aadareta_Sima_Eranda_Madusinghe.mp3" songname="Aadareta Sima" song-id="5005" poster="http://fmderana.lk/image/data/1484800621Aadareta_Sima_Eranda_Madusinghe1.jpg" title="add to playlist"><span class="fa fa-plus fa-fw text-center"></span></a>
+                                      </li>
+                                      <li><a href="javascript:void(0);" class="shre-this-audio" aitist="Eranda Madusinghe" link="/audio/5005/aadareta-sima-eranda-madusinghe" songname="Aadareta Sima" song-id="5005" title="share">
+                                      <span class="fa fa-share-alt fa-fw text-center"></span></a>
+                                      </li>
+                                  </ul>
+                                  </div>
+
+                            </div>
+                            <div class="padder-v">
+                              <a href="#" [routerLink]="['/tracks', rectrackdetails.track_id]" class="text-ellipsis">{{rectrackdetails.title}}</a>
+                              <a href="#" [routerLink]="['/tracks', rectrackdetails.track_id]" class="text-ellipsis text-xs text-muted">{{rectrackdetails.artist_name}}</a>
+                            </div>
+                          </div>
+                        </div>
+                       </div> </div>
+                      
+                      </div>
+                    </div>
+      </div>
+ 
+      
+
+
+    <!--div class="row">
+      
+      <div class="item col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default widget-user-1 text-center">
+                  <div class="avatar">
+                    <img src="{{person.thumb}}" alt="" class="img-full-profile">
+                    <h3>{{person?.title}}</h3>
+                    <a href="#" class="btn btn-success">Play <i class="fa fa-check-circle fa-fw"></i></a>
+                  </div>
+                  <div class="profile-icons margin-none">
+                    <span><i class="fa fa-users"></i> 372</span>
+                    <span><i class="fa fa-photo"></i> 43</span>
+                    <span><i class="fa fa-video-camera"></i> 3</span>
+                  </div>
+                  <div class="panel-body">
+                    <div class="expandable expandable-indicator-white expandable-trigger">
+                      <div class="expandable-content">
+                        <p>Hi! I'm Adrian the Senior UI Designer at
+                          <strong>MOSAICPRO</strong>. We hope you enjoy the design and quality of Social.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem delectus dolorum necessitatibus neque odio quam quas qui quod soluta? Aliquid eius esse minima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+    <div class="item col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default widget-user-1 text-center">
+                  
+                  <div class="panel-body">
+                    <div class="expandable expandable-indicator-white expandable-trigger">
+                      <div class="expandable-content">
+                        <p>Hi! I'm Adrian the Senior UI Designer at
+                          <strong>MOSAICPRO</strong>. We hope you enjoy the design and quality of Social.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem delectus dolorum necessitatibus neque odio quam quas qui quod soluta? Aliquid eius esse minima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    </div -->
+
+
+ 
+</section>
+
+
+</div>

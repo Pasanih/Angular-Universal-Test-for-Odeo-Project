@@ -1,0 +1,27 @@
+<div class="container">
+<section *ngIf="movies">
+
+<div class="cover profile">
+              <div class="wrapper">
+                <div class="image">
+                  <img src="../assets/images/profile-cover.jpg" alt="people" />
+                </div>
+                
+              </div>
+              <div class="cover-info">
+                <div class="avatar">
+                  <img src="{{movies.thumb}}" alt="people" />
+                </div>
+                <div class="name"><a href="#">Album Details</a></div>
+                <ul class="cover-nav">
+
+                  <li><a href="user-public-timeline.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a></li>
+                  <li><a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a></li>
+                  <li><a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a></li>
+
+                </ul>
+              </div>
+</div>
+
+</section>
+</div>

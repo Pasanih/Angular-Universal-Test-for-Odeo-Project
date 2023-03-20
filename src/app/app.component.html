@@ -1,0 +1,66 @@
+<!--nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ODEO TEST</a>
+    </div -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['home']">Track</a></li>
+        <li><a [routerLink]="['album']">Album</a></li>
+        <li><a [routerLink]="['artist']">Artist</a></li>
+        <li><a [routerLink]="['playlist']">Playlist</a></li>
+        <li><a [routerLink]="['test']">Test</a></li>
+      </ul>
+    </div>
+  </div>
+</nav -->
+
+<div class="overlay"></div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+        <div class="navbar-header">
+          <button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" (click)="open()" class="navbar-toggle pull-left"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+           <a class="navbar-brand" href="#">ODEO TEST</a>
+        </div>
+        <div class="navbar-inverse side-collapse in">
+          <nav role="navigation" class="navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li (click)="open()"><a [routerLink]="['home']">Track</a></li>
+              <li (click)="open()"><a [routerLink]="['album']">Album</a></li>
+              <li (click)="open()"><a [routerLink]="['artist']">Artist</a></li>
+              <li (click)="open()"><a [routerLink]="['playlist']">Playlist</a></li>
+              <li (click)="open()"><a [routerLink]="['test']">Test</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </nav>
+    <!--div class="container side-collapse-container">
+      <div class="row">
+        <h1>Hello</h1>
+        <p>This is a side opening nav demonstration</p>
+        <p>Make your browser smaller and the top menu wil become into a lateral slider menu</p>
+      </div>
+    </div-->
+
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+ <!--div class="jumbotron">
+  <h2 class="text-center">ODEO Player</h2>
+</div -->
+
+
+
+
+

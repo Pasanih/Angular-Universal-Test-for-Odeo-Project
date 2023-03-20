@@ -1,0 +1,5 @@
+ .odo-song-panel{position:absolute;width:100%;z-index:12;background:rgba(255,255,255,.8);margin-top: -26px;}
+ .odo-song-panel ul{list-style:none; width: 100% ; margin-left: -20px;}
+ .odo-song-panel ul li{margin:2px 0px;text-align:center;float:left;width:25%}
+ .odo-song-panel ul li a{font-size:16px;font-weight:100;color:#404041}
+ .odo-song-panel ul li a:hover{color:#fecb08}

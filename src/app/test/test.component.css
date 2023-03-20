@@ -1,0 +1,24 @@
+#infinite-scroller {
+ /* height: 900px;
+  width: 900px;
+  border: 1px solid #f5ad7c;
+  overflow: scroll;
+  padding: 0;
+  list-style: none;
+  */
+
+  position: fixed; 
+  overflow-y: scroll;
+  top: 0; right: 0; bottom: 0; left: 0; 
+}
+/*#infinite-scroller li {
+  padding: 10px 5px;
+  line-height: 1.5;
+}
+#infinite-scroller li:nth-child(odd) {
+  background: #ffe8d8;
+}
+#infinite-scroller li:nth-child(even) {
+  background: #f5ad7c;
+}
+*/
